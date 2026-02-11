@@ -103,9 +103,6 @@ int main() {
 }
 
 ```
-
-
-Костюченко Олег - тута
 ### Improvements
 ...Let  simplify code (KISS)
 Works fine!
