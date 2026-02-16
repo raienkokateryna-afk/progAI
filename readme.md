@@ -108,3 +108,15 @@ int main() {
 Works fine!
 Add Your code!
 <h1> My HTML header1</h1>
+
+<h2>hint for html Live Server in codespace </h2>
+if you have not istalled Live Server extension for Visual Studio Code, you can install it from terminal by
+
+```
+code --install-extension ritwickdey.
+```
+
+LiveServer
+Then you can right click on html file and select "Open with Live Server"
+
+git
