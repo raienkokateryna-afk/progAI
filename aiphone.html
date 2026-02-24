@@ -18,83 +18,31 @@
       <script>
 let cppcode=        
 `        
-#include <iostream>
-
-using namespace std;
-
-int main() {
-    int n;
-     cin >> n;
-
-    int base, diff = 0;
-    int same = 0, diffCount = 0;
-
-     cin >> base;
-
-      for (int i = 1; i < n; i++) {
-           cout << "\n i="<<i; // debug line
-           int x;
-            cin >> x;
-             cout << " x="<<x; // debug line
-             if(x == base) {
-                same++;
-             }
-             else {
-                   if(diffCount == 0) {
-                      diff = x;
-                      diffCount = 1;
-                   }
-                   else if(x == diff) {
-                           diffCount++;
-                        }
-                        else {
-                              cout << "No";
-                               return 0;
-                             }
-                  }
-      }
-
-       if (diffCount == 1)
-           cout << "Yes";
-       else
-           cout << "No";
-
-        return 0;
-}
-`
-    mycppcode.textContent = cppcode;
-
-    function mymain(){
+function mymain(){
        myconsole.textContent = "Running...";
        //return;  
         let n=5;
-        let inputs = [100, 100, 100, 200, 100];
-         let base = inputs[0];
-        let same = 0, diffCount = 0;    
-        for (let i = 1; i < n; i++) {
+        let inputs = [100, 100, 100, 100, 100];
+        let _min=1000000000, _max=0; 
+         for (let i = 0; i < n; i++) {
             let x = inputs[i];
-             if(x == base) {
-                same++;
-             }
-             else {
-                   if(diffCount == 0) {
-                      diff = x;
-                      diffCount = 1;
-                   }
-                   else if(x == diff) {
-                           diffCount++;
-                        }
-                        else {
-                              console.log("No");
-                              myconsole.textContent = "No";
-                               return;
-                             }
-                  } 
-    console.log("The End!");
-    myconsole.textContent = "The End!";   
+             _min = Math.min(_min, x);
+             _max = Math.max(_max, x);
+             
+         } 
+         if (_min == _max){
+              console.log("No");
+              myconsole.textContent = "No";
+         }
+         else {
+                console.log("Yes");
+                myconsole.textContent = "Yes";   
+         }  
 
     }
-
+`
+    mycppcode.textContent = cppcode;
+    eval(cppcode);
 
 mymain();
       </script>  

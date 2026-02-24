@@ -6,38 +6,19 @@ int main() {
     int n;
      cin >> n;
 
-    int base, diff = 0;
-    int same = 0, diffCount = 0;
-
-     cin >> base;
-
-      for (int i = 1; i < n; i++) {
-           cout << "\n i="<<i; // debug line
+    int _min = 1000000000, _max = 0;
+      for (int i = 0; i < n; i++) {
+           cout << "\n i="<<i<<" "; // debug line
            int x;
             cin >> x;
              cout << " x="<<x; // debug line
-             if(x == base) {
-                same++;
-             }
-             else {
-                   if(diffCount == 0) {
-                      diff = x;
-                      diffCount = 1;
-                   }
-                   else if(x == diff) {
-                           diffCount++;
-                        }
-                        else {
-                              cout << "No";
-                               return 0;
-                             }
-                  }
+              _min = min(_min, x);
+              _max = max(_max, x);
       }
 
-       if (diffCount == 1)
-           cout << "Yes";
-       else
-           cout << "No";
+       if (_min == _max)
+             cout << "No";
+       else  cout << "Yes";
 
         return 0;
 }
